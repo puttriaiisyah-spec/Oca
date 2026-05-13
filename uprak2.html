@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profile | Daniel Caesar Store</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #0f172a, #1e3a8a);
+  color:white;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+}
+
+/* CARD PROFILE */
+.profile-card {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(15px);
+  padding:40px;
+  border-radius:20px;
+  width:350px;
+  text-align:center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* FOTO */
+.profile-img {
+  width:100px;
+  height:100px;
+  border-radius:50%;
+  object-fit:cover;
+  margin-bottom:15px;
+  border:3px solid #3b82f6;
+}
+
+/* NAMA */
+.profile-card h2 {
+  font-weight:600;
+  margin-bottom:5px;
+}
+
+.profile-card p {
+  color:#cbd5f5;
+  font-size:14px;
+  margin-bottom:20px;
+}
+
+/* INFO */
+.info {
+  text-align:left;
+  margin-top:20px;
+}
+
+.info div {
+  margin-bottom:10px;
+}
+
+.label {
+  font-size:12px;
+  color:#93c5fd;
+}
+
+.value {
+  font-size:14px;
+}
+
+/* BUTTON */
+.btn {
+  margin-top:20px;
+  width:100%;
+  padding:10px;
+  border:none;
+  border-radius:999px;
+  background: linear-gradient(135deg,#3b82f6,#2563eb);
+  color:white;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.btn:hover {
+  opacity:0.8;
+}
+</style>
+</head>
+
+<body>
+
+<div class="profile-card">
+
+  <img src="https://i.pravatar.cc/150" class="profile-img">
+
+  <h2>Daniel User</h2>
+  <p>Music Lover • R&B Enthusiast</p>
+
+  <div class="info">
+    <div>
+      <div class="label">Email</div>
+      <div class="value">user@email.com</div>
+    </div>
+
+    <div>
+      <div class="label">Phone</div>
+      <div class="value">+62 812 3456 7890</div>
+    </div>
+
+    <div>
+      <div class="label">Address</div>
+      <div class="value">Indonesia</div>
+    </div>
+  </div>
+
+  <button class="btn">Edit Profile</button>
+  <button class="btn" onclick="goBack()">Back to Store</button>
+
+</div>
+
+<script>
+function goBack(){
+  window.history.back();
+}
+</script>
+
+</body>
+</html>

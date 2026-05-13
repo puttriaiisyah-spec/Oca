@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Orders | Daniel Caesar Store</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #0f172a, #1e3a8a);
+  color:white;
+  min-height:100vh;
+}
+
+/* HEADER */
+header {
+  padding:20px 40px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+header a {
+  color:#cbd5f5;
+  text-decoration:none;
+}
+
+/* CONTAINER */
+.container {
+  padding:40px;
+}
+
+/* TITLE */
+h2 {
+  margin-bottom:20px;
+  text-align:center;
+}
+
+/* ORDER CARD */
+.order-card {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  padding:20px;
+  border-radius:15px;
+  margin-bottom:20px;
+}
+
+/* ORDER INFO */
+.order-top {
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:10px;
+  font-size:14px;
+  color:#cbd5f5;
+}
+
+.order-items {
+  margin:10px 0;
+}
+
+.item {
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:5px;
+}
+
+/* STATUS */
+.status {
+  font-size:12px;
+  padding:5px 10px;
+  border-radius:999px;
+  display:inline-block;
+}
+
+.pending {background:#facc15; color:#000;}
+.shipped {background:#38bdf8;}
+.completed {background:#22c55e;}
+
+/* TOTAL */
+.total {
+  margin-top:10px;
+  text-align:right;
+  color:#93c5fd;
+  font-weight:600;
+}
+
+/* BACK */
+.back {
+  text-align:center;
+  margin-top:20px;
+  cursor:pointer;
+  color:#cbd5f5;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h3>My Orders</h3>
+  <a href="index.html">← Back to Store</a>
+</header>
+
+<div class="container">
+
+  <h2>Your Orders</h2>
+
+  <!-- ORDER 1 -->
+  <div class="order-card">
+    <div class="order-top">
+      <span>Order #001</span>
+      <span class="status completed">Completed</span>
+    </div>
+
+    <div class="order-items">
+      <div class="item">
+        <span>Freudian Album</span>
+        <span>$89.9</span>
+      </div>
+      <div class="item">
+        <span>T-Shirt</span>
+        <span>$29.9</span>
+      </div>
+    </div>
+
+    <div class="total">Total: $119.8</div>
+  </div>
+
+  <!-- ORDER 2 -->
+  <div class="order-card">
+    <div class="order-top">
+      <span>Order #002</span>
+      <span class="status shipped">Shipped</span>
+    </div>
+
+    <div class="order-items">
+      <div class="item">
+        <span>Case Study 01</span>
+        <span>$87.7</span>
+      </div>
+    </div>
+
+    <div class="total">Total: $87.7</div>
+  </div>
+
+  <!-- ORDER 3 -->
+  <div class="order-card">
+    <div class="order-top">
+      <span>Order #003</span>
+      <span class="status pending">Pending</span>
+    </div>
+
+    <div class="order-items">
+      <div class="item">
+        <span>Mug</span>
+        <span>$9.5</span>
+      </div>
+    </div>
+
+    <div class="total">Total: $9.5</div>
+  </div>
+
+  <div class="back" onclick="goBack()">← Back</div>
+
+</div>
+
+<script>
+function goBack(){
+  window.history.back();
+}
+</script>
+
+</body>
+</html>

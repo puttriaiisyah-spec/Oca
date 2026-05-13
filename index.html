@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daniel Caesar Store</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- BOOTSTRAP -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+* {margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif; scroll-behavior:smooth;}
+
+h3 {
+  color: white;
+}
+
+body {
+  background: linear-gradient(135deg, #0f172a, #1e3a8a);
+  color: white;
+}
+
+/* HAPUS fungsi header lama */
+.logo {display:flex; align-items:center; gap:10px;}
+.logo img {width:25px;}
+
+.icons {display:flex; gap:15px;}
+.icons i {color:#cbd5f5; cursor:pointer; transition:0.3s;}
+.icons i:hover {color:#93c5fd;}
+
+.user-menu {position:relative;}
+
+.dropdown {
+  position:absolute;
+  right:0;
+  top:35px;
+  background: rgba(15,23,42,0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  padding: 15px;
+  width:180px;
+  display:none;
+  box-shadow:0 5px 20px rgba(0,0,0,0.3);
+}
+
+.dropdown p {margin-bottom:10px;}
+.dropdown hr {border:0.5px solid rgba(255,255,255,0.2); margin:8px 0;}
+
+.dropdown a {
+  display:block;
+  text-decoration:none;
+  color:#cbd5f5;
+  padding:6px 0;
+}
+
+.dropdown a:hover {color:#93c5fd;}
+
+.hero {text-align:center; padding:80px 20px;}
+.hero img {width:280px;}
+
+section {padding:60px 40px;}
+
+.container {
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap:30px;
+  margin-top:30px;
+}
+
+.card {
+  background: rgba(255,255,255,0.05);
+  padding:15px;
+  border-radius:20px;
+  text-align:center;
+  transition:0.3s;
+}
+
+.card:hover {
+  transform:translateY(-8px);
+  box-shadow:0 10px 25px rgba(0,0,0,0.4);
+}
+
+.card img {
+  width:100%;
+  border-radius:15px;
+  transition:0.3s;
+}
+
+.card:hover img {transform:scale(1.05);}
+
+.price {color:#93c5fd; margin:10px 0;}
+
+.icon-group {
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  margin-top:10px;
+}
+
+.icon-group i {
+  cursor:pointer;
+  padding:8px;
+  border-radius:50%;
+  transition:0.3s;
+}
+
+.icon-group i:hover {
+  background:#1e3a8a;
+  color:#93c5fd;
+}
+
+.buy-btn {
+  margin-top:10px;
+  padding:8px 16px;
+  border:none;
+  border-radius:10px;
+  background:#3b82f6;
+  color:white;
+  cursor:pointer;
+  width:auto;
+  display:inline-block;
+  transition:0.3s;
+}
+
+.buy-btn:hover {
+  background:#2563eb;
+  transform:scale(1.05);
+}
+
+.about-flex {
+  display:flex;
+  gap:40px;
+  align-items:center;
+  flex-wrap:wrap;
+  max-width:1000px;
+  margin:auto;
+  margin-top:30px;
+}
+
+footer {text-align:center; padding:20px; color:#cbd5f5;}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR BOOTSTRAP -->
+ <header>
+<nav class="navbar navbar-expand-lg navbar-dark"
+style="background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); border-bottom:1px solid rgba(255,255,255,0.1);">
+
+  <div class="container-fluid px-4">
+
+    <!-- LOGO -->
+    <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+      <img src="image-removebg-preview (6).png" width="25">
+      <span>Daniel Caesar</span>
+    </a>
+
+    <!-- TOGGLE -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navFix">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-between" id="navFix">
+
+      <!-- MENU -->
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#album">Albums</a></li>
+        <li class="nav-item"><a class="nav-link" href="#merch">Merchandise</a></li>
+      </ul>
+
+      <!-- ICON -->
+      <div class="d-flex align-items-center gap-3 icons">
+
+        <i class="fa-solid fa-heart"></i>
+        <i class="fa-solid fa-cart-shopping"></i>
+
+        <div class="user-menu">
+          <i class="fa-solid fa-user" onclick="toggleMenu()"></i>
+
+          <div class="dropdown" id="dropdownMenu">
+            <p><strong>Daniel User</strong></p>
+            <hr>
+            <a href="uprak2.html">Profile</a>
+            <a href="uprak2set.html">Settings</a>
+            <a href="uprak2order.html">My Orders</a>
+            <a href="co.html">Checkout</a>
+            <a href="#">Logout</a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</nav>
+</header>
+
+<section class="hero">
+  <img src="d252df74-b63d-4921-a5e8-15ece9649866_removalai_preview.png">
+  <h1>Daniel Caesar Store</h1>
+  <p>Soulful music. Timeless vibes.</p>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <h2 style="text-align:center;">About Us</h2>
+
+  <div class="about-flex">
+
+    <div style="flex:1;">
+      <video autoplay muted loop style="width:100%; border-radius:35px;">
+        <source src="toronto.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div style="flex:1;">
+      <h2>Wear Your Softness</h2>
+      <p style="margin-top:10px; color:#cbd5f5;">
+        Born from music and emotion, our pieces are designed to feel as good as they look.
+We focus on simplicity, comfort, and meaning — creating items that stay with you, not just in style, but in feeling.
+
+Every detail reflects a calm, soulful energy inspired by timeless sounds and honest expression.
+Because what you wear should say something, even in silence.
+
+This is more than merch. This is a mood.
+      </p>
+  </div>
+</section>
+
+<!-- ALBUM -->
+<section id="album">
+  <h2 style="text-align:center">Albums</h2>
+
+  <div class="container">
+
+    <div class="card">
+      <img src="daniel 1.jpg">
+      <h3>Freudian</h3>
+      <p class="price">$89.9</p>
+      <button class="buy-btn" onclick="buyNow('Freudian')">Buy Now</button>
+      <div class="icon-group"><i class="fa-solid fa-heart"></i><i class="fa-solid fa-cart-shopping"></i></div>
+    </div>
+
+    <div class="card">
+      <img src="daniel 2.jpg">
+      <h3>Case Study 01</h3>
+      <p class="price">$87.7</p>
+      <button class="buy-btn" onclick="buyNow('Case Study 01')">Buy Now</button>
+      <div class="icon-group"><i class="fa-solid fa-heart"></i><i class="fa-solid fa-cart-shopping"></i></div>
+    </div>
+
+    <div class="card">
+      <img src="daniel 3.jpg">
+      <h3>Never Enough</h3>
+      <p class="price">$85.5</p>
+      <button class="buy-btn" onclick="buyNow('Never Enough')">Buy Now</button>
+      <div class="icon-group"><i class="fa-solid fa-heart"></i><i class="fa-solid fa-cart-shopping"></i></div>
+    </div>
+
+    <div class="card">
+      <img src="daniel 4.jpg">
+      <h3>Son Of Spergy</h3>
+      <p class="price">$88.8</p>
+      <button class="buy-btn" onclick="buyNow('Son Of Spergy')">Buy Now</button>
+      <div class="icon-group"><i class="fa-solid fa-heart"></i><i class="fa-solid fa-cart-shopping"></i></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- MERCH -->
+<section id="merch">
+  <h2 style="text-align:center">Merchandise</h2>
+
+  <div class="container">
+
+    <div class="card"><img src="merch daniel 1.jpg"><h3>T-Shirt</h3><p class="price">$29.9</p><button class="buy-btn" onclick="buyNow('T-Shirt')">Buy Now</button><div class="icon-group"><i class="fa-solid fa-heart"></i><i class="fa-solid fa-cart-shopping"></i></div></div>
+
+    <div class="card"><img src="merch daniel 2.jpg"><h3>Totebag</h3><p class="price">$15.9</p><button class="buy-btn" onclick="buyNow('Totebag')">Buy Now</button><div class="icon-group"><i class="fa-solid fa-heart"></i><i class="fa-solid fa-cart-shopping"></i></div></div>
+
+    <div class="card"><img src="merch daniel 3.jpg"><h3>Mug</h3><p class="price">$9.5</p><button class="buy-btn" onclick="buyNow('Mug')">Buy Now</button><div class="icon-group"><i class="fa-solid fa-heart"></i><i class="fa-solid fa-cart-shopping"></i></div></div>
+
+    <div class="card"><img src="merch daniel 5.jpg"><h3>Phone Case</h3><p class="price">$17.7</p><button class="buy-btn" onclick="buyNow('Phone Case')">Buy Now</button><div class="icon-group"><i class="fa-solid fa-heart"></i><i class="fa-solid fa-cart-shopping"></i></div></div>
+
+    <div class="card"><img src="cb41e3f3d0b4d3721d84874e896d8668.jpg"><h3>Sweatshirt</h3><p class="price">$39.9</p><button class="buy-btn" onclick="buyNow('Sweatshirt')">Buy Now</button><div class="icon-group"><i class="fa-solid fa-heart"></i><i class="fa-solid fa-cart-shopping"></i></div></div>
+
+    <div class="card"><img src="merch daniel 6.jpg"><h3>Pillow</h3><p class="price">$13.3</p><button class="buy-btn" onclick="buyNow('Pillow')">Buy Now</button><div class="icon-group"><i class="fa-solid fa-heart"></i><i class="fa-solid fa-cart-shopping"></i></div></div>
+
+    <div class="card"><img src="merch daniel 7.jpg"><h3>Hat</h3><p class="price">$19.7</p><button class="buy-btn" onclick="buyNow('Hat')">Buy Now</button><div class="icon-group"><i class="fa-solid fa-heart"></i><i class="fa-solid fa-cart-shopping"></i></div></div>
+
+    <div class="card"><img src="merch daniel 8.jpg"><h3>Socks</h3><p class="price">$7.7</p><button class="buy-btn" onclick="buyNow('Socks')">Buy Now</button><div class="icon-group"><i class="fa-solid fa-heart"></i><i class="fa-solid fa-cart-shopping"></i></div></div>
+
+  </div>
+</section>
+
+<footer>
+  © 2026 Daniel Caesar Store
+</footer>
+
+<script>
+function toggleMenu() {
+  const menu = document.getElementById("dropdownMenu");
+  menu.style.display = menu.style.display === "block" ? "none" : "block";
+}
+
+window.onclick = function(e) {
+  if (!e.target.matches('.fa-user')) {
+    const menu = document.getElementById("dropdownMenu");
+    if (menu.style.display === "block") {
+      menu.style.display = "none";
+    }
+  }
+}
+
+function buyNow(product) {
+  alert("You are buying: " + product);
+}
+
+
+
+</script>
+<audio id="bg-music" loop style="display:none;">
+  <source src="toronto2014.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  const music = document.getElementById("bg-music");
+
+  function startMusic() {
+    music.volume = 0.5;
+    music.play()
+      .then(() => console.log("MUSIC PLAYING"))
+      .catch(err => console.log("ERROR:", err));
+
+    document.removeEventListener("click", startMusic);
+  }
+
+  document.addEventListener("click", startMusic);
+
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden === false) {
+      music.play().catch(() => {});
+    }
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Settings | Daniel Caesar Store</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #0f172a, #1e3a8a);
+  color:white;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:100vh;
+}
+
+/* CARD */
+.settings-card {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(15px);
+  padding:40px;
+  border-radius:20px;
+  width:380px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* TITLE */
+.settings-card h2 {
+  text-align:center;
+  margin-bottom:20px;
+}
+
+/* INPUT */
+.input-group {
+  margin-bottom:15px;
+}
+
+.input-group label {
+  font-size:12px;
+  color:#93c5fd;
+}
+
+.input-group input {
+  width:100%;
+  padding:10px;
+  border:none;
+  border-radius:10px;
+  margin-top:5px;
+  background: rgba(255,255,255,0.1);
+  color:white;
+}
+
+/* TOGGLE */
+.toggle {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin:15px 0;
+}
+
+.toggle input {
+  transform: scale(1.2);
+}
+
+/* BUTTON */
+.btn {
+  width:100%;
+  padding:10px;
+  border:none;
+  border-radius:999px;
+  background: linear-gradient(135deg,#3b82f6,#2563eb);
+  color:white;
+  cursor:pointer;
+  margin-top:10px;
+}
+
+.btn:hover {
+  opacity:0.85;
+}
+
+/* BACK */
+.back {
+  text-align:center;
+  margin-top:15px;
+  font-size:14px;
+  color:#cbd5f5;
+  cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="settings-card">
+
+  <h2>⚙️ Settings</h2>
+
+  <!-- ACCOUNT -->
+  <div class="input-group">
+    <label>Username</label>
+    <input type="text" value="Daniel User">
+  </div>
+
+  <div class="input-group">
+    <label>Email</label>
+    <input type="email" value="user@email.com">
+  </div>
+
+  <div class="input-group">
+    <label>Password</label>
+    <input type="password" placeholder="••••••••">
+  </div>
+
+  <!-- PREFERENCES -->
+  <div class="toggle">
+    <span>Dark Mode</span>
+    <input type="checkbox" checked>
+  </div>
+
+  <div class="toggle">
+    <span>Email Notifications</span>
+    <input type="checkbox" checked>
+  </div>
+
+  <div class="toggle">
+    <span>Auto Save Orders</span>
+    <input type="checkbox">
+  </div>
+
+  <!-- BUTTON -->
+  <button class="btn">Save Changes</button>
+  <button class="btn" onclick="logout()">Logout</button>
+
+  <div class="back" onclick="goBack()">← Back to Store</div>
+
+</div>
+
+<script>
+function goBack(){
+  window.history.back();
+}
+
+function logout(){
+  alert("Logged out!");
+}
+</script>
+
+</body>
+</html>
